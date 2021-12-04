@@ -1,0 +1,10 @@
+.alertBox {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: rgb(238, 148, 148);
+    border: 1px solid red;
+    color: rgb(95, 35, 35);
+    text-align: center;
+    display: none;
+}

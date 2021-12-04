@@ -1,0 +1,48 @@
+.newscontainermainbox {
+    width: 950px;
+    height: 100px;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgb(216, 216, 216);
+}
+
+.circlenewsbox1 {
+    width: 100px;
+    height: 100px;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circlenewsbox2 {
+    width: 850px;
+    height: 100px;
+    float: left;
+    padding: 10px;
+}
+
+.circlenewsbox2first {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+}
+
+.circlenewsbox2second {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+}
+
+.circleprofile {
+    width: 75px;
+    height: 75px;
+    background-color: white;
+    border-radius: 50px;
+}
+
+.circleprofileimg {
+    width: 100%;
+    height: 100%;
+}

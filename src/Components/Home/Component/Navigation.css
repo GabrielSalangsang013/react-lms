@@ -1,0 +1,161 @@
+body {
+    margin: 0;
+    padding: 0px;
+  }
+  
+  .header {
+    width: 100%;
+    height: 10%;
+    border-bottom: 1px solid rgb(233, 233, 233);
+  }
+  
+  .main {
+    width: 100%;
+    height: 80%;
+  }
+  
+  .nav-float {
+    float: left;
+  }
+  
+  .nav-container-1 {
+    width: 15%;
+    height: 100%;
+    position: relative;
+  }
+  
+  .nav-container-2 {
+    width: 50%;
+    height: 100%;
+    position: relative;
+  }
+  
+  .nav-container-3 {
+    width: 35%;
+    height: 100%;
+  }
+  
+  
+  * {box-sizing: border-box;}
+  
+  body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .topnav {
+    overflow: hidden;
+  }
+  
+  .topnav a {
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  .topnav a.active {
+    background-color: #2196F3;
+    color: white;
+  }
+  
+  .search-container {
+    display: inline-block;
+    border: 1px solid rgb(226, 226, 226);
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%,-50%);
+    position: absolute;
+    width: 500px;
+    height: 38px;
+  }
+  
+  .logo {
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%,-50%);
+    position: absolute;
+    width: 100px;
+  }
+  
+.search {
+    width: 90%;
+    height: 100%;
+    padding-left: 25px;
+    font-size: 17px;
+    border: none;
+  }
+  
+  .search-container button {
+    float: right;
+    width: 10%;
+    height: 100%;
+    background: white;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .fa {
+    color: #66ccff;
+    line-height: 30px;
+  }
+  
+  .search-form {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .search-container button:hover {
+    background: #ccc;
+  }
+  
+  .container-3-1, .container-3-2, .container-3-3 {
+    height: 100%;
+    float: left;
+    position: relative;
+  }
+  
+  .container-3-1, .container-3-2 {
+    width: 10%;
+  }
+  
+  .container-3-1 {
+    margin-left: 20%;
+  }
+  
+  .container-3-3 {
+    width: 50%;
+  }
+  
+  .Nav-mini-box {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+  }
+  
+  .flag {
+    width: 30px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+  }
+  
+  .mini-3-3-1 {
+    width: 80%;
+    height: 100%;
+    float: right;
+    text-align: center;
+    line-height: 100px;
+    font-size: 25px;
+  }
