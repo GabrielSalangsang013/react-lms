@@ -1,3 +1,13 @@
+# Finals System Integration LMS
+
+Members
+  - Arvy Louis Mandal
+  - Gabriel Salangsang
+  - Klein Musngi
+  - Lyanne Marie T. David
+  - Mick Nixon Manuit
+  - Rhema
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
