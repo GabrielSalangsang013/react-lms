@@ -14,40 +14,77 @@ const Login = () => {
         let txtType = document.querySelector('input[name="txtType"]:checked');
         let RetypeTxtPassword = document.querySelector('#RetypeTxtPassword');
         let alertBox = document.querySelector('#alertBox');
+        let terms = document.querySelector('#terms');
 
-        if(txtUsername.value === '' || txtPassword.value === '' || RetypeTxtPassword.value === '' || !txtType) {
-            alertBox.style.display = 'block';
-            alertBox.innerText = 'Complete the form';
-        }else if(txtPassword.value !== RetypeTxtPassword.value) {
-            alertBox.style.display = 'block';
-            alertBox.innerText = 'Password and Retype Password are mismatch';
-        }else {
-            alertBox.style.display = 'none';
-            alertBox.innerText = 'Alert Box';
-
-            let newID = () => {
-                const head = Date.now().toString(36);
-                const tail = Math.random().toString(36).substr(2);
-                return newID = head + tail;
+        
+        let text = txtPassword.value.trim();
+        let result = false;
+        // eslint-disable-next-line
+        var format = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/; 
+        var format2 = /[0123456789]+/; 
+        if(format.test(text)){
+            if(format2.test(text)) {
+                result = true;
             }
-    
-            const DATA = {
-                username: txtUsername.value.trim(),
-                password: txtPassword.value.trim(),
-                type: txtType.value,
-                id: newID()
-            }
-    
-            const OPTIONS = {
-                method: "POST",
-                headers: {'Content-type': 'application/json'},
-                body: JSON.stringify(DATA),
-            }
-    
-            fetch('http://localhost:8081/signup/create', OPTIONS)
-                .then(res=>res.json())
-                .then(data=>window.location.href='/');
+        } else {
+          result = false;
         }
+
+
+        if(terms.checked === true) {
+            if(txtUsername.value === '' || txtPassword.value === '' || RetypeTxtPassword.value === '' || !txtType) {
+                alertBox.style.display = 'block';
+                alertBox.innerText = 'Complete the form';
+            }else if(txtPassword.value !== RetypeTxtPassword.value) {
+                alertBox.style.display = 'block';
+                alertBox.innerText = 'Password and Retype Password are mismatch';
+            }else if(result === false){
+                alertBox.style.display = 'block';
+                alertBox.innerText = 'Password must contains Special Characters and Numbers';
+            }else {
+                alertBox.style.display = 'none';
+                alertBox.innerText = 'Alert Box';
+    
+                let newID = () => {
+                    const head = Date.now().toString(36);
+                    const tail = Math.random().toString(36).substr(2);
+                    return newID = head + tail;
+                }
+        
+                const DATA = {
+                    username: txtUsername.value.trim(),
+                    password: txtPassword.value.trim(),
+                    type: txtType.value,
+                    id: newID()
+                }
+        
+                const OPTIONS = {
+                    method: "POST",
+                    headers: {'Content-type': 'application/json'},
+                    body: JSON.stringify(DATA),
+                }
+
+                let goToCondition = (data) => {
+                    if(data.result === 'Username or Password has already exist') {
+                        alertBox.style.display = 'block';
+                        alertBox.innerText = 'Username or Password has already exist';
+                    }else {
+                        alertBox.style.display = 'none';
+                        alertBox.innerText = 'Alert Box';
+                        window.location.href = '/';
+                    }
+                }
+        
+                fetch('http://localhost:8081/signup/create', OPTIONS)
+                    .then(res=>res.json())
+                    .then(data=>goToCondition(data));
+            }
+        }else {
+            alertBox.style.display = 'block';
+            alertBox.innerText = 'Accept the terms of Use';
+        }
+
+        
     }
 
     return (
@@ -76,6 +113,9 @@ const Login = () => {
                         <label htmlFor="Teacher">Teacher</label>
 
                         <br/>
+                        <br/>
+                        <input type="checkbox" id="terms" name="terms" value="terms" />
+                        <label htmlFor="terms">I agree to the <strong>Terms of Use</strong></label><br />
                         <br/>
                         <br/>
                         <button className="submit-btn" onClick={(e) => sendData(e)}>Submit</button>
