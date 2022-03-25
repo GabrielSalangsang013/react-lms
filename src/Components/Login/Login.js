@@ -47,7 +47,7 @@ const Login = () => {
                                 <img className="login-logo" src={mainLogo} alt="Hello World"/>
                             </div>
                             <div className="login-header-2">
-                                <h1>Sign In to Brainflex</h1>
+                                <h1>Sign In to Brainflex New Version</h1>
                             </div>
                         </div>
                         <div className="login-handleInput">
